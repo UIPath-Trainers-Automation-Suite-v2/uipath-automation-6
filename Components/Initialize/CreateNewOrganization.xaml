@@ -15,7 +15,7 @@
   <this:CreateNewOrganization.in_Browser>
     <InArgument x:TypeArguments="ui:UiElement" />
   </this:CreateNewOrganization.in_Browser>
-  <sap:VirtualizedContainerService.HintSize>804,1838.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1786,2239.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence creates a new Github organization. It will open its own browser and log the user into Github using the credential passed in. Then, it will navigate to the necessary pages and create the new organization with the information passed in as arguments.&#xA;&#xA;Preconditions: N/A" DisplayName="Create New Github Organization" sap:VirtualizedContainerService.HintSize="573.6,1733.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap2010:Annotation.AnnotationText="This sequence creates a new Github organization. It will open its own browser and log the user into Github using the credential passed in. Then, it will navigate to the necessary pages and create the new organization with the information passed in as arguments.&#xA;&#xA;Preconditions: N/A" DisplayName="Create New Github Organization" sap:VirtualizedContainerService.HintSize="678.666666666667,2074.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -109,20 +109,20 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="532,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="636.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[Username]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Credential]</InArgument>
         <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[Password]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open new Edge Browser" sap:VirtualizedContainerService.HintSize="532,1395.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OutUiElement="[Browser]" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open new Edge Browser" sap:VirtualizedContainerService.HintSize="636.666666666667,1733.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OutUiElement="[Browser]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Create new Org" sap:VirtualizedContainerService.HintSize="498.4,1178.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Create new Org" sap:VirtualizedContainerService.HintSize="602.666666666667,1515.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="IsLoggedIn" />
             </Sequence.Variables>
@@ -131,19 +131,45 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Login workflow" sap:VirtualizedContainerService.HintSize="456.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\Initialize\GitHub_Login.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Login workflow" sap:VirtualizedContainerService.HintSize="560.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\Initialize\GitHub_Login.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Application">[Browser]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Credential]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <uix:NGoToUrl DisplayName="Go To URL - Needs to change to new activity" sap:VirtualizedContainerService.HintSize="456.8,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://github.com/organizations/plan" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456.8,808" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <uix:NGoToUrl DisplayName="Go To URL - Needs to change to new activity" sap:VirtualizedContainerService.HintSize="560.666666666667,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://github.com/organizations/plan" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="560.666666666667,1143.33333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ro:GitHub_Web_CreateFreeOrg DisplayName="Create New Organization" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GitHub_Web_CreateFreeOrg_1" in_Browser="[Browser]" in_ContactEmail="[in_ContactEmail]" in_OptionalInstitutionName="[in_BusinessName]" in_OrgName="[io_OrganizationName]" />
+                <Sequence sap:VirtualizedContainerService.HintSize="478.666666666667,441.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,192.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ro:GitHub_Web_CreateFreeOrg DisplayName="Create New Organization" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GitHub_Web_CreateFreeOrg_1" in_Browser="[Browser]" in_ContactEmail="[in_ContactEmail]" in_OptionalInstitutionName="[in_BusinessName]" in_OrgName="[io_OrganizationName]" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Web_CreateFreeOrg workflow" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Extracted workflows\GitHub_Web_CreateFreeOrg.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[Browser]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_OrgName">[io_OrganizationName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ContactEmail">[in_ContactEmail]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_OptionalInstitutionName">[in_BusinessName]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="si:InvalidDataException" sap:VirtualizedContainerService.HintSize="423.2,643.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="si:InvalidDataException" sap:VirtualizedContainerService.HintSize="526.666666666667,971.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,21 +180,40 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="si:InvalidDataException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:RetryScope DisplayName="Retry Scope - Try new org name" sap:VirtualizedContainerService.HintSize="416.8,572.8" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                    <ui:RetryScope DisplayName="Retry Scope - Try new org name" sap:VirtualizedContainerService.HintSize="520.666666666667,900.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
-                          <Sequence DisplayName="Try new org name" sap:VirtualizedContainerService.HintSize="375.2,396.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Try new org name" sap:VirtualizedContainerService.HintSize="478.666666666667,723.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please Input An Organization Name That Is NOT Taken" Title="Organization Name">
+                            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please Input An Organization Name That Is NOT Taken" Title="Organization Name">
                               <ui:InputDialog.Result>
                                 <OutArgument x:TypeArguments="x:String">[io_OrganizationName]</OutArgument>
                               </ui:InputDialog.Result>
                             </ui:InputDialog>
-                            <ro:GitHub_Web_CreateFreeOrg sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GitHub_Web_CreateFreeOrg_3" in_Browser="[Browser]" in_ContactEmail="[in_ContactEmail]" in_OptionalInstitutionName="[in_BusinessName]" in_OrgName="[io_OrganizationName]" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,192.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ro:GitHub_Web_CreateFreeOrg sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GitHub_Web_CreateFreeOrg_3" in_Browser="[Browser]" in_ContactEmail="[in_ContactEmail]" in_OptionalInstitutionName="[in_BusinessName]" in_OrgName="[io_OrganizationName]" />
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Web_CreateFreeOrg workflow" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Extracted workflows\GitHub_Web_CreateFreeOrg.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[Browser]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_OrgName">[io_OrganizationName]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ContactEmail">[in_ContactEmail]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_OptionalInstitutionName">[in_BusinessName]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
                           </Sequence>
                         </ActivityAction>
                       </ui:RetryScope.ActivityBody>
