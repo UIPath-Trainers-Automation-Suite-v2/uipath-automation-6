@@ -8,6 +8,7 @@
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Form.Activities": "[1.1.8]",
     "UiPath.GSuite.Activities": "[1.8.0]",
+    "UiPath.MicrosoftOffice365.Activities": "[1.6.0]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]",
     "UiPath.WebAPI.Activities": "[1.6.0]"
@@ -54,5 +55,6 @@
   ],
   "isTemplate": false,
   "templateProjectData": {},
-  "publishData": {}
+  "publishData": {},
+  "targetFramework": "Legacy"
 }
